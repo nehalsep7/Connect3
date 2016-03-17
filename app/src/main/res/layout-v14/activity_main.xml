@@ -7,7 +7,61 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.android.connect3.MainActivity">
+    tools:context="com.example.android.connect3.MainActivity"
+    android:longClickable="false"
+    android:minWidth="88dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:id="@+id/startScreen"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TIC TAC TOE"
+            android:id="@+id/textView"
+            style="@style/Base.TextAppearance.AppCompat.Large.Inverse"
+            android:textSize="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Single Player Game"
+            android:id="@+id/onePlayer"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#2196F3"
+            android:textColor="#ffffff"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:textSize="20sp"
+            android:onClick="startGame"
+            android:tag="1"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Two Player Game"
+            android:id="@+id/twoPlayer"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#2196F3"
+            android:textColor="#ffffff"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:textSize="20sp"
+            android:onClick="startGame"
+            android:tag="2"/>
+
+    </LinearLayout>
 
     <GridLayout
         android:layout_width="match_parent"
@@ -29,7 +83,8 @@
             android:layout_margin="10dp"
             android:contentDescription="@string/image"
             android:onClick="onClick"
-            android:tag="0"/>
+            android:tag="0"
+             />
 
         <ImageView
             android:layout_width="90dp"
@@ -132,29 +187,60 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#a1887f"
+        android:background="#FFF176"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:padding="30dp"
+        android:padding="27dp"
         android:alpha="1"
-        android:id="@+id/WinLayout">
+        android:id="@+id/WinLayout"
+        android:visibility="invisible"
+        android:layout_margin="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/wonText"
             android:layout_gravity="center_horizontal"
-            android:textSize="20sp"
-            android:text="You Won" />
+            android:textSize="30sp"
+            android:text="You Won"
+            android:textColor="#004D40"
+            android:layout_marginBottom="15dp" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Play Again"
-            android:id="@+id/playAgain"
-            android:layout_gravity="center_horizontal"
-            android:onClick="playAgain" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play Again"
+                android:id="@+id/playAgain"
+                android:onClick="playAgain"
+                android:layout_weight="1"
+                android:textColor="#FFFFFF"
+                android:background="#2196F3"
+                android:textSize="20sp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Main Menu"
+                android:id="@+id/mainMenu"
+                android:layout_weight="1"
+                android:textColor="#FFFFFF"
+                android:background="#2196F3"
+                android:textSize="20sp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:onClick="getMainMenu" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </RelativeLayout>
